@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const routes = require('./routes')
-
+const port = process.env.PORT || 3333
 const server = express()
 
 mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-rlqes.azure.mongodb.net/omnistack8?retryWrites=true&w=majority',{
@@ -13,4 +13,4 @@ server.use(cors())
 server.use(express.json())
 server.use(routes)
 
-server.listen(3333)
+server.listen(port)
